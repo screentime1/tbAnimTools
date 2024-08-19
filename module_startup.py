@@ -27,14 +27,12 @@
 import maya.utils as mutils
 import pymel.core as pm
 import maya.mel as mel
-import tbtoolsUpdater as upd
+#import tbtoolsUpdater as upd
 import maya.cmds as cmds
 
 class initialise(object):
     def check_for_updates(self):
-        if not pm.optionVar.get('tbUpdateType', -1) == 2:
-            updater = upd.updater()
-            updater.check_version()
+        pass
 
     def loadRMB(self, *args):
         pass
