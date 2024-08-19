@@ -99,7 +99,7 @@ def dpiScale():
 
 
 def get_commit_details(repo_owner, repo_name):
-    url = f"https://api.github.com/repos/{repo_owner}/{repo_name}/commits"
+    #url = f"https://api.github.com/repos/{repo_owner}/{repo_name}/commits"
     with urlopen(url) as response:
         data = response.read().decode('utf-8')
         commits = json.loads(data)
@@ -107,7 +107,7 @@ def get_commit_details(repo_owner, repo_name):
 
 
 def get_commit_comments_and_files(repo_owner, repo_name, commit_sha):
-    url = f"https://api.github.com/repos/{repo_owner}/{repo_name}/commits/{commit_sha}"
+   # url = f"https://api.github.com/repos/{repo_owner}/{repo_name}/commits/{commit_sha}"
     with urlopen(url) as response:
         data = response.read().decode('utf-8')
         commit_details = json.loads(data)
@@ -117,7 +117,7 @@ def get_commit_comments_and_files(repo_owner, repo_name, commit_sha):
 
 
 def download_commit_zip(repo_owner, repo_name, commit_sha):
-    url = f"https://github.com/{repo_owner}/{repo_name}/archive/{commit_sha}.zip"
+   # url = f"https://github.com/{repo_owner}/{repo_name}/archive/{commit_sha}.zip"
     zip_filename = f"{repo_name}_{commit_sha}.zip"
     urlretrieve(url, zip_filename)
     print(f"Downloaded {zip_filename}")
@@ -138,7 +138,7 @@ def get_update_urls():
         count += 1
         if count > maxCommits:
             break
-        url = f"https://github.com/{repo_owner}/{repo_name}/archive/{commit_sha}.zip"
+        # url = f"https://github.com/{repo_owner}/{repo_name}/archive/{commit_sha}.zip"
         comment, files_changed = get_commit_comments_and_files(repo_owner, repo_name, commit_sha)
         urls.append(url)
         comments.append(comment)
